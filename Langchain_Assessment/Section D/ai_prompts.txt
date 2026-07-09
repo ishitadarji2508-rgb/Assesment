@@ -1,0 +1,14 @@
+Section D - AI Prompt
+
+Create a Python program using LangChain ConversationChain and ConversationBufferMemory for a food delivery order tracking assistant.
+
+Requirements:
+- Use Ollama Llama3.2 as the LLM.
+- Store order statuses in a local Python dictionary with sample order IDs such as #101, #102, #103, and #104.
+- Allow the user to ask for the status of an order by entering an order ID.
+- Maintain conversation history using ConversationBufferMemory.
+- Support follow-up questions such as "What about order #102?" without losing context.
+- Run in a terminal input loop.
+- Exit when the user types "quit".
+- At the end of the session, print the total number of unique order IDs queried.
+- Keep the code simple, readable, and well commented.

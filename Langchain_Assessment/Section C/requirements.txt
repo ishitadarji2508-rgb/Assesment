@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-ollama
+ollama
+flask
+requests
+joblib
+pandas
+scikit-learn
+numpy

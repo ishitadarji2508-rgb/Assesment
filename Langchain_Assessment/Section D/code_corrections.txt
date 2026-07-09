@@ -1,0 +1,32 @@
+Section D - Code Corrections
+
+1. AI Original Code
+
+The AI-generated code directly accessed the dictionary using:
+
+order_status = orders[order_id]
+
+Issue:
+If the user entered an invalid order ID (for example #999), the program would raise a KeyError and terminate unexpectedly.
+
+
+2. Corrected Code
+
+order_status = orders.get(
+    order_id,
+    "Order ID not found."
+)
+
+# Fixed:
+# Used dictionary.get() to safely handle invalid order IDs.
+# The program now continues running even if the user enters an invalid order ID.
+
+3. Improvement
+
+The AI-generated code also produced a LangChain deprecation warning because it used the ConversationChain class.
+
+The code still works correctly for this assessment, but newer versions of LangChain recommend using RunnableWithMessageHistory instead of ConversationChain for future implementations.
+
+4. Explanation
+
+The original AI-generated code could crash when an invalid order ID was entered because it accessed the dictionary directly. I replaced it with the dictionary.get() method to safely handle missing order IDs. I also noted that ConversationChain is deprecated in recent LangChain versions and should be replaced with RunnableWithMessageHistory in future projects.

@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Masala Dosa",
+        "cuisine": "South Indian",
+        "price": 180,
+        "veg": true
+    },
+    {
+        "name": "Veg Hakka Noodles",
+        "cuisine": "Chinese",
+        "price": 220,
+        "veg": true
+    },
+    {
+        "name": "Undhiyu",
+        "cuisine": "Gujarati",
+        "price": 240,
+        "veg": true
+    },
+    {
+        "name": "Chole Kulche",
+        "cuisine": "Street Food",
+        "price": 150,
+        "veg": true
+    },
+    {
+        "name": "Veg Burger",
+        "cuisine": "Fast Food",
+        "price": 170,
+        "veg": true
+    },
+    {
+        "name": "Paneer Frankie",
+        "cuisine": "Fast Food",
+        "price": 160,
+        "veg": true
+    },
+    {
+        "name": "Veg Tacos",
+        "cuisine": "Mexican",
+        "price": 280,
+        "veg": true
+    },
+    {
+        "name": "Lasagna",
+        "cuisine": "Italian",
+        "price": 350,
+        "veg": true
+    },
+    {
+        "name": "Paneer Butter Masala",
+        "cuisine": "North Indian",
+        "price": 320,
+        "veg": true
+    },
+    {
+        "name": "Veg Biryani",
+        "cuisine": "Indian",
+        "price": 250,
+        "veg": true
+    }
+]

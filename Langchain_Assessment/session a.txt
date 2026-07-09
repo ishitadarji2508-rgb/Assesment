@@ -1,0 +1,72 @@
+﻿LANGCHAIN ASSESSMENT 
+
+
+SESSION : A Concept Application 
+
+
+SCENARIO : You are deploying a delivery time prediction model for a food delivery startup. The data science team trained the model in a Jupyter notebook using scikit-learn, and you need to ship it as part of a production Flask service that will handle several hundred requests per hour. 
+
+
+Question: Compare Pickle and Joblib as serialisation choices for this deployment context. Which would you use and why? What risks does each carry when the model is loaded back in an environment that differs from the one it was trained in?
+
+
+Ans : Both Pickle and Joblib are Python libraries used to save and load trained machine learning models. Pickle is a general-purpose serialization library that works well for small Python objects, whereas Joblib is optimized for large NumPy arrays and scikit-learn models, making it faster and more memory-efficient. For a Flask-based delivery prediction service, I would choose Joblib because it loads large ML models more efficiently and handles frequent requests better. However, both methods require the same Python and library versions used during training; otherwise, compatibility issues may occur. Additionally, loading model files from untrusted sources is unsafe because both Pickle and Joblib can execute malicious code during deserialization. 
+
+
+SCENARIO :You are working on a food delivery app that wants to auto-generate high-quality promotional images of dishes using only a restaurant's text description and a reference photo of the plated meal. The marketing team wants realistic, visually rich results. Question: A colleague suggests using a Variational Autoencoder (VAE), while another recommends a Stable Diffusion-based model. Compare the two approaches for this image-generation task — address their key architectural differences, output quality, and which is more appropriate for a production marketing pipeline 
+
+
+Question: A colleague suggests using a Variational Autoencoder (VAE), while another recommends a Stable Diffusion-based model. Compare the two approaches for this image-generation task — address their key architectural differences, output quality, and which is more appropriate for a production marketing pipeline .
+
+
+Ans :  A Variational Autoencoder (VAE) generates images by compressing them into a latent space and reconstructing them, but its output is often blurry and less detailed. Stable Diffusion generates images by gradually removing noise, producing sharp, realistic, and high-quality images from text prompts and reference images. In this scenario, Stable Diffusion is the better choice because the food delivery app requires visually rich promotional images for marketing. Although it requires more computational resources, it delivers superior image quality and is more suitable for a production marketing pipeline.
+
+
+
+
+
+
+
+
+
+
+SCENARIO :  You are developing an AI assistant for a food delivery platform. The assistant must handle two distinct jobs: (1) answering open-ended questions such as 'What cuisines are trending near me this weekend?', and (2) classifying incoming customer reviews as Positive, Neutral, or Negative for the analytics dashboard.
+
+
+Question: GPT-style decoder-only models and BERT-style encoder-only models are both available to your team. Which architecture is better suited to each job, and what fundamental property of each architecture makes it the right choice for that specific task? 
+
+
+ Ans : In this scenario, GPT-style decoder-only models are better for answering open-ended questions such as "What cuisines are trending near me this weekend?" because they are designed to generate natural, human-like text. BERT-style encoder-only models are better for classifying customer reviews as Positive, Neutral, or Negative because they understand the full context of the input using bidirectional processing, making them highly accurate for classification tasks. Therefore, GPT is suitable for text generation, while BERT is ideal for text understanding and sentiment classification. 
+
+
+SCENARIO : You are building a customer support bot for a food delivery platform. The bot must
+handle complaint categories it has never been explicitly trained on — such as 'wrong
+item delivered', 'packaging damaged', and 'missing cutlery'. Your team has only 3
+annotated complaint–response pairs available per category.
+
+
+Question: Explain the difference between zero-shot and few-shot prompting. Given the
+constraints described, which strategy would you apply, and how would you structure the prompt
+to maximise the quality of the bot's responses . 
+
+
+ Ans : Zero-shot prompting asks the model to perform a task without giving any examples, while few-shot prompting provides a few example input-output pairs before the actual task. In this scenario, I would use few-shot prompting because only 3 annotated complaint-response pairs are available, which can guide the model to generate more accurate and consistent responses. To maximize response quality, the prompt should define the bot's role, include 2–3 complaint-response examples, specify a professional and empathetic tone, and then present the new customer complaint for the model to answer. 
+
+
+SCENARIO:You are designing a LangChain-based food ordering assistant. A simpler alternative is a
+single LLM call that takes the user's message and returns a response directly. Your team
+is debating whether to build a full agent with tools or use a straightforward LLMChain.
+
+
+Question: Describe what distinguishes a LangChain agent from a simple LLM chain. Given that
+your food ordering assistant must check live restaurant availability, call an API to calculate
+estimated delivery time, and validate discount codes, justify which approach is more
+appropriate — and identify two risks the agent approach introduces.
+ Ans :A LangChain Agent differs from a simple LLMChain because an LLMChain only sends a prompt to the LLM and returns a response, whereas a LangChain Agent can reason, choose tools, and call external APIs before answering. In this scenario, a LangChain Agent is more appropriate because the food ordering assistant must check live restaurant availability, calculate estimated delivery time using an API, and validate discount codes. However, the agent approach has two risks: higher response time due to multiple API/tool calls and greater development complexity, making testing and debugging more difficult. 
+SCENARIO : You are optimising a food delivery chatbot that must accurately answer questions about the platform's 500-page policy document and a menu catalogue that is updated daily. Your team is evaluating two approaches: fine-tuning the underlying LLM on this data, or implementing a Retrieval-Augmented Generation (RAG) pipeline .
+
+
+Question: Compare fine-tuning and RAG for this specific scenario. Address update frequency, cost, hallucination risk, and data privacy. Which approach is more suitable for a daily-updated, document-grounded Q&A bot, and what limitations does your recommended approach still carry .
+
+
+ Ans : Fine-tuning improves an LLM by retraining it on specific data, but it is expensive and must be repeated whenever the data changes. Retrieval-Augmented Generation (RAG) retrieves relevant documents at query time, so it can use the latest information without retraining the model. In this scenario, RAG is the better choice because the 500-page policy document and daily updated menu catalogue require frequent updates, lower cost, reduced hallucination, and better data privacy by keeping documents outside the model. However, RAG still depends on retrieving the correct documents, so poor retrieval can result in incomplete or less accurate answers.
