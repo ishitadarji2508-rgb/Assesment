@@ -1,0 +1,5 @@
+Time : 2026-07-09 18:50:26.576350
+Mode : Classify
+Query : My order arrived two hours late.
+Output : Late Delivery
+--------------------------------------------------

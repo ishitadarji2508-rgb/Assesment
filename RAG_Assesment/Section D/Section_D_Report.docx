@@ -1,0 +1,28 @@
+1. Exact Prompt Given to the AI
+
+Write a Python 3 program that implements a simple Retrieval-Augmented Generation (RAG) pipeline.
+
+Requirements:
+- Read a plain-text food delivery refund policy from Policy.txt.
+- Split the text into fixed-size chunks.
+- Generate embeddings using SentenceTransformer("all-MiniLM-L6-v2").
+- Store embeddings in a FAISS index.
+- Accept a user question.
+- Retrieve the top 2 relevant chunks.
+- Build and display a structured RAG prompt.
+- Print a simulated answer.
+- Continue until the user types "quit".
+
+2. AI's Original Code and Corrected Version
+
+AI Original Code: AI_Original.py
+
+Corrected Version: improved_version.py
+
+3. Changes Made
+
+I tested the AI-generated code and found a few limitations. 
+I improved the input handling by using strip() and lower() so the program accepts different forms of the quit command.
+I also added validation for empty input and changed the retrieval logic using k = min(2, len(chunks)) to avoid errors when fewer than two chunks are available.
+Finally, 
+I improved the RAG prompt so that answers are generated only from the provided context, otherwise the response is "I don't know."
