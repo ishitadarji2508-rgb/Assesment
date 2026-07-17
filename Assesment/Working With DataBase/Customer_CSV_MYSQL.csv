@@ -1,0 +1,5 @@
+id,customer_name,city_id,customer_address,next_call_date,ts_inserted
+1,"Jewelry Store",4,"Long Street 120",2020-01-21,"2020-01-09 14:01:20.0000"
+2,Bekery,1,"Kufustendamm 25",2020-02-21,"2020-01-09 17:52:15.0000"
+3,Cafe,1,"Tauentzienstrabe 44",2020-01-21,"2020-01-10 08:02:49.0000"
+4,Restaurent,3,"Ulica lipa 15",2020-01-21,"2020-01-10 09:20:21.0000"
